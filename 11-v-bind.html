@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <img v-bind:src="imgURL" alt="">
+  <a v-bind:href="aHref">搜索</a>
+
+<!--  簡寫  -->
+  <img :src="imgURL" alt="">
+  <a :href="aHref">搜索</a>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好Vue!',
+      imgURL: 'https://s.yimg.com/vd/ec-material/auction2_tw_myauction/ws-mantel1-service_module-img_4-60a4f8d9030aa.jpg',
+      aHref: 'http://www.kimo.com'
+    }
+  })
+</script>
+
+</body>
+</html>
