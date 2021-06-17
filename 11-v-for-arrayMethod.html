@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <ul>
+    <li v-for="item in letters" :key="item">{{item}}</li>
+  </ul>
+  <button @click="btnClick">按鈕</button>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      letters:['A','B','C','D','E']
+    },
+    methods:{
+      btnClick(){
+      //push方法
+      this.letters.push('aaa')
+      }
+      //通過索引改變非響應是
+      // this.letters[0]='bbbbb'無法顯示在頁面
+      // this.letters.splice(0,1,'bbbbb')//數組方法
+      // Vue.set(this.letters,0,'bbbbb')//Vue內部函數
+    }
+  })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <div @click="divClick">
+<!--  stop阻止冒泡  -->
+    <button @click.stop="btnClick">按鈕</button>
+  </div>
+  <br>
+  <form action="baidu">
+<!--  prevent阻止默認行為  -->
+    <input type="submit" value="提交" @click.prevent="submitClick">
+  </form>
+<!--  監聽某個鍵(enter鍵)的點擊  -->
+  <input type="text" @keyup.enter="keyup">
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好Vue!'
+    },
+    methods:{
+      divClick(){
+        console.log('divClick')
+      },
+      btnClick(){
+        console.log('btnClick')
+      },
+      submitClick(){
+        console.log('submitClick')
+      },
+      keyup(){
+        console.log('keyup')
+      }
+    }
+  })
+</script>
+
+</body>
+</html>
