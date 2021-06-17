@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <cpn1></cpn1>
+  <cpn2></cpn2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  //語法糖註冊全局組件
+  Vue.component('cpn1',{
+    template:`
+      <div>
+        <h2>我是標題1</h2>
+        <p>我是內容1</p>
+      </div>
+    `
+  })
+
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好Vue!'
+    },
+    //語法糖註冊局部組件
+    components:{
+      'cpn2':{
+        template:`
+      <div>
+        <h2>我是標題2</h2>
+        <p>我是內容2</p>
+      </div>
+    `
+      }
+    }
+  })
+</script>
+
+</body>
+</html>

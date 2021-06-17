@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <!-- 3.使用組件 -->
+  <cpn></cpn>
+</div>
+
+<div id="app2">
+  <cpn></cpn>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  //1.創建組件構造器對象
+  const cpnC = Vue.extend({
+    template: `
+            <div>
+            <h2>我是標題</h2>
+            <p>我是內容1</p>
+            <p>我是內容2</p>
+            </div>
+    `
+  })
+
+  //2.註冊組件
+  //全局組件
+  // Vue.component('my-cpn', cpnC)
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好Vue!'
+    },
+    //局部組件
+    components:{
+      cpn: cpnC
+    }
+
+  })
+  const app2 = new Vue({
+    el: '#app2',
+    data: {
+      message: '你好Vue!'
+    }
+  })
+</script>
+
+</body>
+</html>

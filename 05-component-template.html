@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <cpn></cpn>
+  <cpn></cpn>
+  <cpn></cpn>
+</div>
+
+<!-- 1.通過script標籤抽離 -->
+<!--<script type="text/x-template" id="cpn">-->
+<!--<div>-->
+<!--  <h2>我是標題</h2>-->
+<!--  <p>我是內容</p>-->
+<!--</div>-->
+<!--</script>-->
+
+<!-- 2.通過template標籤抽離 -->
+<template id="cpn">
+  <div>
+    <h2>我是標題</h2>
+    <p>我是內容</p>
+  </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+  Vue.component('cpn',{
+    template: '#cpn'
+  })
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好Vue!'
+    }
+  })
+</script>
+
+</body>
+</html>
